@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Entrar - Shopping Militar</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <main class="container auth-container">
+      <div class="auth-card">
+        <div class="tabs">
+          <button id="tab-login" class="tab active">Entrar</button>
+          <button id="tab-register" class="tab">Cadastrar</button>
+        </div>
+
+        <div id="login-box" class="tab-content">
+          <h2>Entrar</h2>
+          <form id="login-form" class="contact-form">
+            <label>Email<input class="form-control" name="email" type="email" required /></label>
+            <label>Senha<input class="form-control" name="password" type="password" required /></label>
+            <button type="submit" class="btn btn-primary btn-lg" >Entrar</button>
+          </form>
+          <div id="login-status"></div>
+        </div>
+
+        <div id="register-box" class="tab-content" style="display:none">
+          <h2>Cadastrar</h2>
+          <form id="register-form" class="contact-form">
+            <label>Nome completo<input class="form-control" name="name" required /></label>
+            <label>Email<input class="form-control" name="email" type="email" required /></label>
+            <label>Senha<input class="form-control" name="password" type="password" required /></label>
+            <label>Telefone<input class="form-control" name="phone" required /></label>
+            <label>CEP<input class="form-control" name="cep" required /></label>
+            <label>Rua<input class="form-control" name="street" required /></label>
+            <label>Número<input class="form-control" name="number" required /></label>
+            <label>Bairro<input class="form-control" name="district" required /></label>
+            <label>Complemento<input class="form-control" name="complement" /></label>
+            <label>Referência<input class="form-control" name="reference" /></label>
+            <label>Endereço completo (texto)<textarea class="form-control" name="address" rows="2" required></textarea></label>
+            <div style="display:flex;gap:.5rem;margin-top:.5rem">
+              <button type="button" id="use-location" class="btn btn-outline">Usar localização atual</button>
+              <span id="loc-status" style="align-self:center;color:#cfcfcf;font-size:.9rem"></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Criar Conta</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <script src="../script/script.js"></script>
+    <script>
+      // toggle tabs
+      (function(){
+        const tLogin = document.getElementById('tab-login');
+        const tReg = document.getElementById('tab-register');
+        const boxLogin = document.getElementById('login-box');
+        const boxReg = document.getElementById('register-box');
+        if(tLogin && tReg){
+          tLogin.addEventListener('click', ()=>{ tLogin.classList.add('active'); tReg.classList.remove('active'); boxLogin.style.display='block'; boxReg.style.display='none'; });
+          tReg.addEventListener('click', ()=>{ tReg.classList.add('active'); tLogin.classList.remove('active'); boxReg.style.display='block'; boxLogin.style.display='none'; });
+        }
+      })();
+    </script>
+  </body>
+</html>

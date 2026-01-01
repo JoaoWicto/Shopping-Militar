@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Shopping Militar — equipamentos táticos, fardamentos, botas, mochilas e acessórios. Qualidade e entrega rápida." />
+    <title>Shopping Militar — Onde a missão começa</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">Shopping Militar</a>
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="html/loja.html">Produtos</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#contato">Contato</a>
+        </nav>
+        <div class="header-actions">
+          <input id="search" class="search" placeholder="Pesquisar produtos..." aria-label="Pesquisar produtos" />
+          <button id="cart-btn" class="btn btn-dark">Carrinho (<span id="cart-count">0</span>)</button>
+          <a id="login-link" class="btn btn-outline" href="html/login.html">Entrar</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-inner container">
+          <h1>Equipamentos de quem vive a missão.</h1>
+          <p class="lead">Produtos táticos, duráveis e confiáveis para operações, campo e aventura.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="html/loja.html">Ver Produtos</a>
+            <a class="btn btn-outline" href="#contato">Fale Conosco</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="badges container">
+        <div class="badge">Qualidade Garantida</div>
+        <div class="badge">Envio Rápido</div>
+        <div class="badge">Atendimento Especializado</div>
+      </section>
+
+      <section class="featured container">
+        <h2>Mais vendidos</h2>
+        <div id="featured-products" class="grid"></div>
+      </section>
+
+      <section id="sobre" class="about container">
+        <h2>Sobre o Shopping Militar</h2>
+        <p>O Shopping Militar nasceu para atender quem leva preparo, disciplina e resistência a sério. Trabalhamos com equipamentos de alta qualidade para uso tático, operacional e outdoor, sempre focados em desempenho, durabilidade e confiança.</p>
+      </section>
+
+      <section id="promocoes" class="promotions container">
+        <h2>Promoções</h2>
+        <div class="promo-grid">
+          <div class="promo promo-1">Descontos em mochilas — até 30% OFF</div>
+          <div class="promo promo-2">Kit inicial tático — preço especial</div>
+        </div>
+      </section>
+
+      <section id="contato" class="contact container">
+        <h2>Contato</h2>
+        <form id="contact-form" class="contact-form">
+          <label>Nome<input class="form-control" name="name" required /></label>
+          <label>Email<input class="form-control" name="email" type="email" required /></label>
+          <label>Mensagem<textarea class="form-control" name="message" rows="4" required></textarea></label>
+          <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+        </form>
+
+        <div class="contact-info">
+          <p><strong>Horário de atendimento:</strong> Seg — Sex: 09:00 — 18:00</p>
+          <p><strong>WhatsApp:</strong> <a id="whatsapp-link" href="#">Entrar em contato</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <strong>Shopping Militar</strong>
+          <p>Equipamentos táticos e outdoor — qualidade e confiança.</p>
+        </div>
+        <div>
+          <a href="html/privacy.html">Política de Privacidade</a>
+          <a href="html/policies.html">Trocas e Devoluções</a>
+          <a class="admin-link" href="html/admin.html">Admin</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <button id="close-cart" class="modal-close">×</button>
+        <h3>Seu carrinho</h3>
+        <div id="cart-items"></div>
+        <div class="cart-total">Total: R$ <span id="cart-total">0.00</span></div>
+        <div class="modal-actions">
+          <button id="checkout" class="btn btn-primary">Finalizar Compra</button>
+          <button id="clear-cart" class="btn btn-outline">Limpar</button>
+        </div>
+      </div>
+    </div>
+
+    <a id="whatsapp-float" class="whatsapp-float" href="#" aria-label="WhatsApp">💬</a>
+
+    <script src="script/script.js"></script>
+    <!-- Product detail modal -->
+    <div id="product-modal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <button id="close-product-modal" class="modal-close">×</button>
+        <div id="product-modal-content"></div>
+      </div>
+    </div>
+  </body>
+</html>

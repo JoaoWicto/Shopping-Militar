@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Painel Admin - Shopping Militar</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1 style="text-align:center">Painel Administrativo — Shopping Militar</h1>
+
+      <section id="admin-login" class="card" style="max-width:520px;margin:1rem auto;">
+        <h2>Entrar (apenas senha)</h2>
+        <form id="admin-login-form" style="display:flex;gap:.5rem;align-items:center">
+          <label style="flex:1">Senha<input name="password" type="password" class="form-control" required /></label>
+          <button type="submit" class="btn btn-primary">Entrar</button>
+        </form>
+        <p style="font-size:.9rem;color:#bbb;margin-top:.5rem">Senha padrão: <strong>admin@123</strong>. Você pode alterar em <code>script/admin.js</code>.</p>
+      </section>
+
+      <section id="admin-panel" style="display:none">
+        <div style="display:flex;gap:1rem;align-items:flex-start;flex-wrap:wrap">
+          <aside style="flex:1;min-width:320px;max-width:360px">
+            <div class="card">
+              <h3>Gerenciar Produtos</h3>
+              <form id="product-form" class="contact-form">
+                <label>Nome<input class="form-control" name="name" required /></label>
+                <label>Categoria<input class="form-control" name="category" required /></label>
+                <label>Preço<input class="form-control" name="price" type="number" step="0.01" required /></label>
+                <label>SKU<input class="form-control" name="sku" placeholder="opcional" /></label>
+                <label>Estoque<input class="form-control" name="stock" type="number" min="0" value="0" /></label>
+                <label>Imagem (URL)<input class="form-control" name="img" required /></label>
+                <label><input type="checkbox" name="featured" /> Destaque da semana</label>
+                <label><input type="checkbox" name="promo" /> Promoção</label>
+                <div style="display:flex;gap:.5rem;margin-top:.5rem">
+                  <button type="submit" class="btn btn-primary">Salvar</button>
+                  <button id="clear-products" type="button" class="btn btn-outline">Limpar tudo</button>
+                </div>
+              </form>
+            </div>
+            <div class="card" style="margin-top:1rem">
+              <h3>Resumo Rápido</h3>
+              <div id="admin-summary"></div>
+            </div>
+          </aside>
+          <main style="flex:2;min-width:320px">
+            <div class="card">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <h3 style="margin:0">Painel</h3>
+                <div>
+                  <button id="tab-dashboard" class="btn btn-ghost">Dashboard</button>
+                  <button id="tab-products" class="btn btn-ghost">Produtos</button>
+                  <button id="tab-clients" class="btn btn-ghost">Clientes</button>
+                  <button id="tab-orders" class="btn btn-ghost">Pedidos</button>
+                </div>
+              </div>
+              <div id="panel-dashboard" style="margin-top:1rem">
+                <h4>Vendas & Estatísticas</h4>
+                <div style="height:260px"><canvas id="sales-chart" style="width:100%;height:100%"></canvas></div>
+                <div style="display:flex;gap:.5rem;margin-top:.5rem">
+                  <button id="export-pdf" class="btn btn-primary">Exportar relatório (PDF)</button>
+                  <button id="export-csv" class="btn btn-outline">Exportar produtos mais vendidos (CSV)</button>
+                </div>
+                <div style="margin-top:1rem" id="dashboard-stats"></div>
+                <div id="dashboard-products" style="margin-top:1rem">
+                  <h4>Produtos cadastrados</h4>
+                  <div id="admin-products" class="grid"></div>
+                </div>
+                <!-- Pedidos simplificados embutidos no Dashboard -->
+                <div id="dashboard-orders" style="margin-top:1rem">
+                  <h4>Pedidos</h4>
+                  <div id="admin-orders"></div>
+                  <p style="color:var(--muted);font-size:.9rem;margin-top:.5rem">Marque como entregue e adicione uma nota quando o pedido for finalizado.</p>
+                </div>
+              </div>
+              <div id="panel-products" style="display:none;margin-top:1rem">
+                <h4>Gerenciar Produtos</h4>
+                <div id="admin-products-panel"></div>
+              </div>
+              <div id="panel-clients" style="display:none;margin-top:1rem">
+                <h4>Clientes</h4>
+                <div style="display:flex;gap:.5rem;margin-bottom:.5rem"><button id="export-clients-wa" class="btn btn-primary">Enviar clientes por WhatsApp</button> <button id="export-clients-csv" class="btn btn-outline">Exportar CSV</button></div>
+                <div id="admin-clients"></div>
+              </div>
+              <div id="panel-orders" style="display:none;margin-top:1rem">
+                <h4>Pedidos (Página)</h4>
+                <div id="admin-orders-page"></div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </section>
+    </main>
+
+    <!-- libs: Chart.js + jsPDF -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="../script/script.js"></script>
+    <script src="../script/admin.js"></script>
+  </body>
+</html>
+<!-- duplicata removida -->

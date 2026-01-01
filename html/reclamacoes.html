@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reclamações e Avaliações - Shopping Militar</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Reclamações e Avaliações</h1>
+      <form id="complaint-form" class="contact-form">
+        <label>Seu nome<input class="form-control" name="name" required /></label>
+        <label>Email<input class="form-control" name="email" type="email" required /></label>
+        <label>Página do produto (nome)<input class="form-control" name="product" required /></label>
+        <label>Nota (1-5)<input class="form-control" name="rating" type="number" min="1" max="5" required /></label>
+        <label>Reclamação / Avaliação<textarea class="form-control" name="message" rows="4" required></textarea></label>
+        <button class="btn btn-primary">Enviar</button>
+      </form>
+      <div id="complaint-status"></div>
+    </main>
+    <script src="../script/script.js"></script>
+  </body>
+</html>

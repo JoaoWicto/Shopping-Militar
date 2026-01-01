@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Produtos - Shopping Militar</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html">Shopping Militar</a>
+        <nav class="main-nav">
+          <a href="../index.html">Home</a>
+          <a href="loja.html" aria-current="page">Produtos</a>
+        </nav>
+        <div class="header-actions">
+          <input id="search-page" class="search" placeholder="Pesquisar na loja..." />
+          <button id="cart-btn-page" class="btn btn-dark">Carrinho (<span id="cart-count-page">0</span>)</button>
+          <a id="login-link-page" class="btn btn-outline" href="login.html">Entrar</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <h1>Produtos</h1>
+      <div class="filters">
+        <select id="category-filter">
+          <option value="all">Todas as categorias</option>
+          <option>Fardamentos</option>
+          <option>Botas e Coturnos</option>
+          <option>Equipamentos Táticos</option>
+          <option>Mochilas Militares</option>
+          <option>Acessórios</option>
+        </select>
+      </div>
+
+      <section id="products" class="grid products-grid"></section>
+    </main>
+
+    <!-- Cart Modal (mesmo markup usado na home) -->
+    <div id="cart-modal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <button id="close-cart" class="modal-close">×</button>
+        <h3>Seu carrinho</h3>
+        <div id="cart-items"></div>
+        <div class="cart-total">Total: R$ <span id="cart-total">0.00</span></div>
+        <div class="modal-actions">
+          <button id="checkout" class="btn btn-primary">Finalizar Compra</button>
+          <button id="clear-cart" class="btn btn-outline">Limpar</button>
+        </div>
+      </div>
+    </div>
+
+    <a id="whatsapp-float" class="whatsapp-float" href="#" aria-label="WhatsApp">💬</a>
+
+    <script src="../script/script.js"></script>
+    <div id="product-modal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <button id="close-product-modal" class="modal-close">×</button>
+        <div id="product-modal-content"></div>
+      </div>
+    </div>
+  </body>
+</html>
